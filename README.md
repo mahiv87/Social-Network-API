@@ -5,6 +5,7 @@
 ## Table of Contents
 
 -   [Description](#description)
+-   [Screenshot](#screenshot)
 -   [Technologies](#technologies)
 -   [Installation](#installation)
 -   [Usage](#usage)
@@ -15,7 +16,11 @@
 
 ## Description
 
-An API for a social network, using Express and MongoDB
+An API for a social network, built using Express and MongoDB
+
+## Screenshot
+
+![screenshot of social network api](./assets/images/social-net-api.png)
 
 ## Technologies
 
@@ -23,6 +28,7 @@ An API for a social network, using Express and MongoDB
 -   Node.js
 -   Express.js
 -   Mongoose
+-   Day.js
 
 ## Installation
 
@@ -30,7 +36,11 @@ Clone the repository
 
 ## Usage
 
-Run the app in the terminal. Or use the Heroku deployed link instead of cloning repository
+Run the app in the terminal `npm run start`. Use routes in Insomnia, or your API client of choice.
+
+You can also access the API by using the Heroku deployed link, https://intense-temple-62940.herokuapp.com/api
+
+View the [DEMO](https://drive.google.com/file/d/1sx9Rvb4_T_xv1ghQLNF0Ldq8ULjnYEmM/view?usp=sharing) video to see how the api works
 
 ## License
 
