@@ -1,4 +1,4 @@
-const { Thought, User } = require('../models');
+const { User, Thought, Reaction } = require('../models');
 
 module.exports = {
 	// Get all Thoughts
@@ -9,7 +9,7 @@ module.exports = {
 	},
 	// Get a single Thought
 	getSingleThought(req, res) {
-		Thought.fineOne({ _id: req.params.thoughtId })
+		Thought.findOne({ _id: req.params.thoughtId })
 			.select('-__v')
 			.then((thought) =>
 				!thought
@@ -32,12 +32,10 @@ module.exports = {
 			})
 			.then((user) =>
 				!user
-					? res
-							.status(404)
-							.json({
-								message:
-									'Thought created, but found no user with that Id...'
-							})
+					? res.status(404).json({
+							message:
+								'Thought created, but found no user with that Id...'
+					  })
 					: res.json('Thought created..')
 			)
 			.catch((err) => res.status(500).json(err));
