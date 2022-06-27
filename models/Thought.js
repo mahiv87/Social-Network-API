@@ -1,5 +1,8 @@
 const { Schema, model } = require('mongoose');
 const reactionSchema = require('./Reaction');
+const dayjs = require('dayjs');
+var advancedFormat = require('dayjs/plugin/advancedFormat');
+dayjs.extend(advancedFormat);
 
 const thoughtSchema = new Schema(
 	{
@@ -10,8 +13,8 @@ const thoughtSchema = new Schema(
 		},
 		createdAt: {
 			type: Date,
-			default: Date.now()
-			// get: format(this.default)
+			default: dayjs(),
+			get: (date) => dayjs(date).format('MMM Do, YYYY [at] hh:mm a')
 		},
 		username: {
 			type: String,
@@ -31,10 +34,6 @@ const thoughtSchema = new Schema(
 thoughtSchema.virtual('reactionCount').get(function () {
 	return this.reactions.length;
 });
-
-// function format(date) {
-// 	return formatDate(date);
-// }
 
 const Thought = model('thought', thoughtSchema);
 
