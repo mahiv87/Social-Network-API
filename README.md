@@ -38,7 +38,7 @@ Clone the repository
 
 Run the app in the terminal `npm run start`. Use routes in Insomnia, or your API client of choice.
 
-You can also access the API by using the Heroku deployed link, https://intense-temple-62940.herokuapp.com/api
+You can also access the API by using the Heroku deployed link, https://social-network-api-62940.herokuapp.com/api/
 
 View the [DEMO](https://drive.google.com/file/d/1sx9Rvb4_T_xv1ghQLNF0Ldq8ULjnYEmM/view?usp=sharing) video to see how the api works
 
