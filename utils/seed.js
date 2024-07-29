@@ -58,6 +58,16 @@ connection.once('open', async () => {
 			})
 		);
 
+		await Promise.all(
+			userDocs.map(async (user) => {
+				const userThoughts = thoughtDocs.filter(
+					(thought) => thought.username === user.username
+				);
+				user.thoughts = userThoughts.map((thought) => thought._id);
+				await user.save();
+			})
+		);
+
 		console.table(userDocs);
 		console.table(thoughtDocs);
 		console.info('Seeding complete! 🌱');
